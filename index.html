@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4ourblock - Komunitas Minecraft Indonesia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Pixelated Style) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom styles to apply the Minecraft font */
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-image: url('https://placehold.co/1920x1080/000000/FFFFFF?text=MC+Background'); /* Fallback background */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Minecraft-style button */
+        .btn-minecraft {
+            background-color: #7a7a7a; /* Stone gray */
+            border: 4px solid #333333;
+            border-bottom-color: #555555;
+            border-right-color: #555555;
+            color: white;
+            text-shadow: 2px 2px #333333;
+            image-rendering: pixelated;
+            transition: all 0.1s ease-in-out;
+            box-shadow: 4px 4px 0px #333333;
+        }
+
+        .btn-minecraft:hover {
+            background-color: #8c8c8c;
+        }
+
+        .btn-minecraft:active {
+            transform: translateY(4px) translateX(4px);
+            box-shadow: none;
+            border-bottom-color: #333333;
+            border-right-color: #333333;
+        }
+
+        /* Glass-like panel effect */
+        .glass-panel {
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            border: 4px solid #5a5a5a;
+        }
+        
+        /* Ensure the background image covers the screen */
+        html, body {
+            height: 100%;
+        }
+
+        /* Animation for floating elements */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delay {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: -3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white relative overflow-x-hidden">
+
+    <!-- This script will set a random Minecraft background image on load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const minecraftImages = [
+                'https://images.unsplash.com/photo-1612303350296-621351154c14?q=80&w=1974&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1593369457934-01d1d575d5b3?q=80&w=2070&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1605273154941-677152de5bca?q=80&w=2070&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1620359220092-224a1323c310?q=80&w=1932&auto=format&fit=crop'
+            ];
+            const randomImage = minecraftImages[Math.floor(Math.random() * minecraftImages.length)];
+            document.body.style.backgroundImage = `url('${randomImage}')`;
+        });
+    </script>
+
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+        
+        <!-- Decorations -->
+        <!-- GANTI GAMBAR DI SINI: Ubah nilai 'src' di bawah ke nama file gambar Anda atau URL gambar. -->
+        <div class="absolute top-1/3 left-4 sm:left-10 lg:left-24 w-20 h-20 animate-float z-0 hidden md:block" title="RoxyAI7 Head">
+             <img id="deco1" src="/RoxyAI7_head 3d.png" alt="Decorative Image 1" style="image-rendering: pixelated; width: 100%; height: 100%;">
+        </div>
+        
+        <!-- GANTI GAMBAR DI SINI: Ubah nilai 'src' di bawah ke nama file gambar Anda atau URL gambar. -->
+        <div class="absolute bottom-12 right-4 sm:right-10 lg:right-24 w-20 h-20 animate-float-delay z-0 hidden sm:block" title="Creeper Head">
+            <img id="deco2" src="/Creeper_Head.png" alt="Decorative Image 2" style="image-rendering: pixelated; width: 100%; height: 100%;">
+        </div>
+        
+        <!-- GANTI GAMBAR DI SINI: Ubah nilai 'src' di bawah ke nama file gambar Anda atau URL gambar. -->
+        <div class="absolute bottom-1/4 left-8 sm:left-16 lg:left-32 w-24 h-24 animate-float z-0 hidden sm:block" title="Piglin Head">
+            <img id="deco3" src="/Piglin_Head.png" alt="Decorative Image 3" style="image-rendering: pixelated; width: 100%; height: 100%;">
+        </div>
+
+        <!-- Main Content Box -->
+        <div class="w-full max-w-2xl text-center glass-panel p-6 sm:p-10 rounded-lg relative z-10">
+
+            <!-- Profile Image / Logo -->
+            <!-- GANTI GAMBAR DI SINI: Ubah nilai 'src' untuk logo Anda. -->
+            <div class="mb-6">
+                <img src="/img/123.png" alt="Logo 4ourblock" 
+                     class="w-32 h-32 mx-auto rounded-full border-4 border-gray-600 shadow-lg"
+                     style="image-rendering: pixelated;"
+                     onerror="this.onerror=null;this.src='https://placehold.co/128x128/8b5cf6/ffffff?text=4B';">
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-4xl md:text-5xl mb-2 text-yellow-300" style="text-shadow: 3px 3px #000000;">
+                4ourblock
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-sm md:text-base mb-8 text-gray-200">
+                Dunia Mods, Addons, Shaders & Texture Minecraft Terbaik!
+            </p>
+
+            <!-- Links Container -->
+            <div class="flex flex-col space-y-6 w-full max-w-md mx-auto">
+                
+                <!-- YouTube Link -->
+                <a href="https://youtube.com/@4ourblock-id?si=T3G0yZ6ci2ml9-Cl" class="btn-minecraft p-4 text-lg w-full flex items-center justify-center">
+                    <i class="fab fa-youtube mr-4 text-red-500 text-2xl"></i>
+                    YouTube
+                </a>
+
+                <!-- Discord Link -->
+                <a href="https://discord.gg/tCjMkJEf5z" class="btn-minecraft p-4 text-lg w-full flex items-center justify-center">
+                    <i class="fab fa-discord mr-4 text-indigo-400 text-2xl"></i>
+                    Discord
+                </a>
+
+                <!-- WhatsApp Channel Link -->
+                <a href="https://whatsapp.com/channel/0029VbBBS9U0G0XYo7hsp90o" class="btn-minecraft p-4 text-lg w-full flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-4 text-green-400 text-2xl"></i>
+                    Saluran WA
+                </a>
+
+                <!-- WhatsApp Community Link -->
+                <a href="https://chat.whatsapp.com/IEaoKA11mnEAcVnBC8XxoI" class="btn-minecraft p-4 text-lg w-full flex items-center justify-center">
+                    <i class="fa fa-users mr-4 text-green-500 text-2xl"></i>
+                    Komunitas WA
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-8 text-center text-xs text-white" style="text-shadow: 2px 2px #000;">
+            <p>&copy; 2025 4ourblock. Dibuat untuk para Crafters.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
